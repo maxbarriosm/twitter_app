@@ -9,6 +9,9 @@
         <li class="nav-item">
           <%= link_to 'Home', root_path, class: 'nav-link active'%>
         </li>
+        <%if user_signed_in? %>
+        <%= button_to 'Salir', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        <%end %>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
